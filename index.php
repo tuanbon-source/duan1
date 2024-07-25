@@ -110,6 +110,10 @@ switch($act){
         include "views/viewcart.php";
         break;
 
+    case "giohang" :
+        include "views/donhang.php";
+        break;
+
     case "thanhtoan" :
         if((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])){
             //lấy dữ liệu

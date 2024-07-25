@@ -96,10 +96,14 @@
                         <input type="radio" name="pttt" value="4"> Thanh toán Online <br>
                     </td>
                     </tr>
+                    <tr>
+                        <td><input type="submit" value="Thanh toán" name="thanhtoan"></td>
+                    </tr>
                 </table>
             </div>
         </div>
     </div>
+    
     
 </main>
 

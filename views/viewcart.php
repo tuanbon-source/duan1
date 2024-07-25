@@ -77,8 +77,10 @@
                                             <a href="index.php?act=shop">Tiếp tục mua hàng</a>
                                         </div>
                                         <div class="cart-clear">
-                                        <a href="index.php?act=bill">Thanh toán</a>
-                                            <a href="index.php?act=delcart">Xóa cửa hàng</a>
+                                        <form action="index.php?act=thanhtoan" method="post">
+                                        <td><input type="submit" value="Thanh toán" name="thanhtoan"></td>
+                                        </form>
+                                        <a href="index.php?act=delcart">Xóa cửa hàng</a>
                                         </div>
                                     </div>
             </div>
