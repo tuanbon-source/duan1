@@ -76,7 +76,8 @@
                 
                 <button class="addCart" style="border-radius: 50%;
   border: 1px red solid;
-  background: white;" value="Add To Cart" name="addtocart"><i class="la la-cart-plus"></i></button>
+  background: white;
+  " value="Add To Cart" name="addtocart"><i class="la la-cart-plus"></i></button>
             </div>
         </div>
         <div class="product-content-2">

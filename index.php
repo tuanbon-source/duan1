@@ -110,9 +110,13 @@ switch($act){
         include "views/viewcart.php";
         break;
 
-    case "giohang" :
+    case "donhang" :
         include "views/donhang.php";
         break;
+
+    case "cart" :
+        include "views/viewcart.php";
+        break;    
 
     case "thanhtoan" :
         if((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])){
@@ -127,7 +131,7 @@ switch($act){
             //tạo đơn hàng
             //và trả về 1 id đơn hàng
             $iddh=taodonhang($madh,$tong_tien,$pttt,$ten_nguoi_dung,$dia_chi,$email,$so_dien_thoai);
-            include "views/donhang.php";
+            include "views/home.php";
         }
         break;
 

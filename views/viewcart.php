@@ -77,44 +77,10 @@
                                             <a href="index.php?act=shop">Tiếp tục mua hàng</a>
                                         </div>
                                         <div class="cart-clear">
-                                        <form action="index.php?act=thanhtoan" method="post">
-                                        <td><input type="submit" value="Thanh toán" name="thanhtoan"></td>
-                                        </form>
+                                        <a href="index.php?act=donhang">Thanh toán</a>
                                         <a href="index.php?act=delcart">Xóa cửa hàng</a>
                                         </div>
                                     </div>
-            </div>
-        </div>
-        <div class="row">
-            <div >
-                <h3>THÔNG TIN ĐẶT HÀNG</h3>
-                <form action="index.php?act=thanhtoan" method="post">
-                    <input type="hidden" name="tong_tien" value="<?=$tong?>">
-                <table class="dathang">
-                    <tr>
-                        <td><input type="text" name="ten_nguoi_dung" placeholder="Nhập họ tên"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="dia_chi" placeholder="Nhập địa chỉ"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="email" placeholder="Nhập email"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="so_dien_thoai" placeholder="Nhập số điện thoại"></td>
-                    </tr>
-                    <tr>
-                        <td>Phương thức thanh toán <br>
-                        <input type="radio" name="pttt" value="1"> Thanh toán khi nhận hàng <br>
-                        <input type="radio" name="pttt" value="2"> Thanh toán Chuyển khoản <br>
-                        <input type="radio" name="pttt" value="3"> Thanh toán ví MoMo<br>
-                        <input type="radio" name="pttt" value="4"> Thanh toán Online <br>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Thanh toán" name="thanhtoan"></td>
-                    </tr>
-                </table>
             </div>
         </div>
     </div>

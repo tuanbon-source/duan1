@@ -47,11 +47,6 @@
     max-width: 1200px;
   }
 }
-.addCart{
-  border-radius: 50%;
-  border: 1px red solid;
-  background: white;
-}
 .row {
   margin-right: calc(var(--bs-gutter-x) * -0.6);
   margin-left: calc(var(--bs-gutter-x) * -0.6);
