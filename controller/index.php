@@ -1,8 +1,18 @@
 <?php
+ob_start();
+session_start();
+if(($_SESSION['role']) && ($_SESSION['role']) != ""){
+    $chucvu = $_SESSION['role'];
+    if($chucvu == 2){
+}
+}else{
+    header("location: ../index.php");
+}
 include "header.php";
 include "../model/connect.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
+include "../model/user.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     $check = "";
@@ -72,7 +82,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case "addsp":
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['submit'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
                 $soluong = $_POST['soluong'];
@@ -105,7 +115,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
 
                 if (empty($errTen) && empty($errHinh) && empty($errPrice) && empty($errSoluong) && empty($errNgaydang) && empty($errIddm) && empty($errMota)) {
-                    $target = '../upload/' . basename($_FILES['imgsp']['name']);
+                    $target = '../upload/'.basename($_FILES['imgsp']['name']);
                     if (move_uploaded_file($_FILES['imgsp']['tmp_name'], $target)) {
 //                        var_dump($tensp, $giasp, $hinh, $soluong, $ngaydang, $iddm, $mota);
 //                        die;
@@ -205,6 +215,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         }
 
+        case "list_user":
+
+            $list = loadAll_user();
+            include "admin/list_admin.php";
+            break;
+
+           
 
         default:
             include "home.php";
@@ -215,5 +232,5 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 }
 
 include "footer.php";
-
+ob_end_flush();
 ?>

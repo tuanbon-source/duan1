@@ -77,7 +77,7 @@
                                             <a href="index.php?act=shop">Tiếp tục mua hàng</a>
                                         </div>
                                         <div class="cart-clear">
-                                        <a href="index.php?act=donhang">Thanh toán</a>
+                                        <a href="index.php?act=donhang">Mua hàng</a>
                                         <a href="index.php?act=delcart">Xóa cửa hàng</a>
                                         </div>
                                     </div>

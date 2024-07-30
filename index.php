@@ -1,12 +1,16 @@
 <?php
+ob_start();
 session_start();
 if(!isset($_SESSION['giohang'])) $_SESSION['giohang']=[];
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 include "views/header.php";
 include "model/connect.php";
 include "model/sanpham.php";
 include "model/danhmuc.php";
 include "model/donhang.php";
+include "model/user.php";
 
+$list_user = loadAll_user();
 $listsanpham = load_all();
 $list_dm = loadAll_danhmuc();
 if(isset($_GET['act']) && ($_GET['act']) != ""){
@@ -16,6 +20,59 @@ $kyw = "";$checkshop = "";
 switch($act){
     case "lien_he":
         include "views/lien_he.php";
+    break;
+    case "login":
+        if(isset($_POST['login'])){
+            foreach($list_user as $item){
+            // extract($list_user);
+            if($_POST['user_name'] == "" || $_POST['user_password'] == ""){
+                $check = "Vui lòng điền đầy đủ thông tin";
+            }
+            else if($_POST['user_name'] == $item['tai_khoan'] && $_POST['user_password'] == $item['mat_khau']){
+                $_SESSION['user'] = $_POST['user_name'];
+                $_SESSION['pass'] = $_POST['user_password'];
+                $_SESSION['role'] = $item['id_chuc_vu'];
+                header("location:index.php");
+                exit();
+            }else{
+                $check = "Sai thông tin tài khoản hoặc mật khẩu";
+            }
+        }
+        }
+        include "views/user/login.php";
+    break;
+
+    case "sign_up":
+        if(isset($_POST['dangky'])){
+            $user_exiest = false;
+            foreach($list_user as $item){
+                if($_POST['user_name'] === $item['tai_khoan']){
+                    $user_exiest = true;
+                }
+            }
+            if($user_exiest == true){
+                $check_re = "Tài khoản đã tồn tại";
+            }else if($_POST['user_name'] == "" || $_POST['user_password'] == "" || $_POST['email'] == "" || $_POST['sdt'] == ""){
+                $check_re = "Vui lòng điền đầy đủ thông tin";
+            }else{
+                $_SESSION['user'] = $_POST['user_name'];
+                $_SESSION['pass'] = $_POST['user_password'];
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['sdt'] = $_POST['sdt'];
+                $_SESSION['dia_chi'] = $_POST['dia_chi'];
+                insert_user($_SESSION['user'],$_SESSION['pass'],$_SESSION['email'],$_SESSION['sdt'],$_SESSION['dia_chi']);
+                $check_re = "Đăng ký thành công, đăng nhập ngay thôi (●'◡'●).";
+            }
+        }
+        
+        include "views/user/sign_up.php";
+    break;    
+
+    case "log_out":
+        session_unset();
+        header("location:index.php");
+        exit();
+        include "views/home.php";
     break;
     
     case "bao_hanh":
@@ -111,6 +168,7 @@ switch($act){
         break;
 
     case "donhang" :
+        
         include "views/donhang.php";
         break;
 
@@ -120,22 +178,40 @@ switch($act){
 
     case "thanhtoan" :
         if((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])){
-            //lấy dữ liệu
-            $tong_tien=$_POST['tong_tien'];
+            $iduser = 0;
+
+            // Check if user is logged in and get their ID
+            if (isset($_SESSION['user']) && isset($_SESSION['user']['id'])) {
+                $iduser = $_SESSION['user']['id'];
+            }
+
+
+
+
+
+            $tong_tien= tongdonhang();
             $ten_nguoi_dung=$_POST['ten_nguoi_dung'];
             $dia_chi=$_POST['dia_chi'];
             $email=$_POST['email'];
             $so_dien_thoai=$_POST['so_dien_thoai'];
             $pttt=$_POST['pttt'];
             $madh="CARD".rand(0,999999);
+            $ngaydathang = date('h:i:sa d/m/Y');
             //tạo đơn hàng
             //và trả về 1 id đơn hàng
-            $iddh=taodonhang($madh,$tong_tien,$pttt,$ten_nguoi_dung,$dia_chi,$email,$so_dien_thoai);
-            include "views/home.php";
+            $iddh=taodonhang($madh,$tong_tien,$pttt,$ten_nguoi_dung,$dia_chi,$email,$so_dien_thoai,$ngaydathang);
+
+
+            if (isset($_SESSION['giohang'])) {
+                unset($_SESSION['giohang']);
+            }
+
+            
+            include "views/home.php";   
         }
         break;
-
-    default: 
+    
+    default:
     include "views/home.php";
     break;    
     
@@ -143,5 +219,7 @@ switch($act){
 }else{
     include "views/home.php";  
 }
+
 include "views/footer.php";
+ob_end_flush(); 
 ?>

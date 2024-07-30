@@ -1,8 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
-
-<!-- Mirrored from template.hasthemes.com/daxone/daxone/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Jul 2024 10:12:00 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -73,7 +70,7 @@
                                 <div class="setting-wrap setting-wrap-mrg border-style">
                                     <a class="setting-active" href="#">
                                         <i class="la la-cog"></i>
-                                        Tài khoản
+                                       <?php echo (isset($_SESSION['user']) && isset($_SESSION['pass'])) ? ("Chào ".$_SESSION['user']) : "Tài khoản" ?>
                                     </a>
                                     <!-- Setting account dropdown start -->
                                     <div class="setting-content">
@@ -91,27 +88,94 @@
                                                     
                                                 </ul>
                                             </li>
+                                            <?php if(isset($_SESSION['user']) && isset($_SESSION['pass'])){?>
                                             <li>
                                                 <h4>Tài khoản</h4>
                                                 <ul>
-                                                    <li><a href="login-register.html">Đăng nhập</a></li>
-                                                    <li><a href="login-register.html">Tạo tài khoản</a></li>
-                                                    <li><a href="my-account.html">Tài khoản của bạn</a></li>
+                                                    <li><a href="index.php?act=log_out" onclick="return confirm('bạn có chắc chắn muốn thoát?')">Đăng xuất</a></li>
+                                                <?php if(isset( $_SESSION['role']) && $_SESSION['role'] == 2){?>
+                                                    <li><a href="controller/index.php">Truy cập trang admin</a></li>   
+                                                <?php }?>
                                                 </ul>
                                             </li>
+                                            <?php }else{?>
+                                                <li>
+                                                <h4>Tài khoản</h4>
+                                                <ul>
+                                                    <li><a href="index.php?act=login">Đăng nhập</a></li>
+                                                </ul>
+                                            </li>
+                                            <?php }?>   
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="cart-wrap cart-wrap-2">
-                                    <a href="index.php?act=donhang">Đơn hàng</a>
-                                    <a href="index.php?act=cart">
-                                    <button class="cart-active">                                       
+                                    <button class="cart-active">
+                                        <span class="mini-cart-price-2">400.000VNĐ</span>
                                         <i class="la la-shopping-cart"></i>
-                                        <span class="count-style-2"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span>
+                                        <span class="count-style-2">01</span>
                                     </button>
-                                    </a>
-                                    
-                                    
+                                    <div class="shopping-cart-content">
+                                        <div class="shopping-cart-top">
+                                            <h4>Giỏ hàng của bạn</h4>
+                                            <a class="cart-close" href="#"><i class="la la-close"></i></a>
+                                        </div>
+                                        <ul>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="views/assets/images/cart/cart-1.jpg"></a>
+                                                    <div class="item-close">
+                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Golden Easy Spot Chair.</a></h4>
+                                                    <span>$99.00</span>
+                                                </div>
+                                                <div class="shopping-cart-delete">
+                                                    <a href="#"><i class="la la-trash"></i></a>
+                                                </div>
+                                            </li>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="views/assets/images/cart/cart-2.jpg"></a>
+                                                    <div class="item-close">
+                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Golden Easy Spot Chair.</a></h4>
+                                                    <span>$99.00</span>
+                                                </div>
+                                                <div class="shopping-cart-delete">
+                                                    <a href="#"><i class="la la-trash"></i></a>
+                                                </div>
+                                            </li>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><img alt="" src="views/assets/images/cart/cart-3.jpg"></a>
+                                                    <div class="item-close">
+                                                        <a href="#"><i class="sli sli-close"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#">Golden Easy Spot Chair.</a></h4>
+                                                    <span>$99.00</span>
+                                                </div>
+                                                <div class="shopping-cart-delete">
+                                                    <a href="#"><i class="la la-trash"></i></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="shopping-cart-bottom">
+                                            <div class="shopping-cart-total">
+                                                <h4>Tổng tiền: <span class="shop-total">$290.00</span></h4>
+                                            </div>
+                                            <div class="shopping-cart-btn btn-hover default-btn text-center">
+                                                <a class="black-color" href="checkout.html">Đi tới nơi thanh toán </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
