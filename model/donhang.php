@@ -19,29 +19,45 @@ function tongdonhang()
 
 
 
-function insert_bill($iduser, $name, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang)
+function giohang($iduser, $idpro, $img, $name, $price, $soluong ,$thanhtien, $id_donhang)
 {
-    $sql = "INSERT INTO bill(iduser,bill_name,bill_email,bill_address,bill_tel,bill_pttt,ngaydathang,total) values('$iduser','$name','$email','$address','$tel','$pttt','$ngaydathang','$tongdonhang')";
-    return pdo_execute_return_lastInsertId($sql);
-}
-function insert_cart($iduser, $idpro, $img, $name, $price, $soluong,$khuyenmai ,$thanhtien, $idbill)
-{
-    $sql = "INSERT INTO cart(iduser,idpro,img,name,price,soluong,khuyenmai,thanhtien,idbill) values('$iduser','$idpro','$img','$name','$price','$soluong','$khuyenmai','$thanhtien','$idbill')";
+    $sql = "INSERT INTO gio_hang(iduser,idpro,img,name,price,soluong,thanhtien,idbill) values('$iduser','$idpro','$img','$name','$price','$soluong','$thanhtien','$id_donhang')";
     return pdo_execute($sql);
 }
 
-function loadone_bill($id)
+function loadone_donhang($id)
 {
-    $sql = "select * from bill where id=" . $id;
+    $sql = "select * from don_hang where id=" . $id;
     $bill = pdo_query_one($sql);
     return $bill;
 }
-
-function loadall_cart($idbill)
+function loadall_giohang()
 {
-    $sql = "select * from cart where idbill=" . $idbill;
-    $bill = pdo_query($sql);
-    return $bill;
+    $sql = "SELECT * FROM `don_hang` order by `id` desc ";
+        $listdonhang = pdo_query($sql);
+        return $listdonhang;;
+}
+
+
+
+
+function get_pttt($a)
+{
+    switch ($a) {
+        case '1':
+            $pt = "Trả tiền khi nhận hàng";
+            break;
+        case '2':
+            $pt = "Chuyển khản ngân hàng";
+            break;
+        case '3':
+            $pt = "Thanh toán online";
+            break;
+        default:
+            $pt = "Trả tiền khi nhận hàng";
+            break;
+    }
+    return $pt;
 }
 
 

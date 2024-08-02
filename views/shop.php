@@ -81,8 +81,16 @@
                                                             <span><?php echo number_format($item['gia_san_pham'],'0',',','.')?><span style="color:red;"> VNĐ</span></span>
                                                         </div>
                                                         <div class="product-addtocart">
-                                                            <a title="Add To Cart" href="#">+ Add To Cart</a>
+                                                        <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
                                                         </div>
+                                                        </form>
+                                                                                                          
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,8 +118,16 @@
                                                     </div>
                                                     <p><?php echo $item['mo_ta']?>.</p>
                                                     <div class="product-list-action">
-                                                        <a title="Wishlist" href="#"><i class="la la-heart-o"></i></a>
-                                                        <a title="Add To Cart" href="#"><i class="la la-shopping-cart"></i></a>
+                                                    <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                        </form>
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
@@ -160,7 +176,16 @@
                                                             <span><?php echo number_format($item['gia_san_pham'],'0',',','.')?><span style="color:red;"> VNĐ</span></span>
                                                         </div>
                                                         <div class="product-addtocart">
-                                                            <a title="Add To Cart" href="#">+ Add To Cart</a>
+                                                        <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                        </form>
+                                                    
                                                         </div>
                                                     </div>
                                                 </div>
@@ -189,8 +214,16 @@
                                                     </div>
                                                     <p><?php echo $item['mo_ta']?>.</p>
                                                     <div class="product-list-action">
-                                                        <a title="Wishlist" href="#"><i class="la la-heart-o"></i></a>
-                                                        <a title="Add To Cart" href="#"><i class="la la-shopping-cart"></i></a>
+                                                    <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                        </form>
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,7 +272,16 @@
                                                             <span><?php echo number_format($item['gia_san_pham'],'0',',','.')?><span style="color:red;"> VNĐ</span></span>
                                                         </div>
                                                         <div class="product-addtocart">
-                                                            <a title="Add To Cart" href="#">+ Add To Cart</a>
+                                                        <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                        </form>
+                                                   
                                                         </div>
                                                     </div>
                                                 </div>
@@ -268,8 +310,16 @@
                                                     </div>
                                                     <p><?php echo $item['mo_ta']?>.</p>
                                                     <div class="product-list-action">
-                                                        <a title="Wishlist" href="#"><i class="la la-heart-o"></i></a>
-                                                        <a title="Add To Cart" href="#"><i class="la la-shopping-cart"></i></a>
+                                                    <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                        </form>
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
@@ -317,8 +367,17 @@
                                                         <div class="product-price">
                                                             <span><?php echo number_format($item['gia_san_pham'],'0',',','.')?><span style="color:red;"> VNĐ</span></span>
                                                         </div>
-                                                        <div class="product-addtocart">
-                                                            <a title="Add To Cart" href="#">+ Add To Cart</a>
+                                                        <div class="product-addcart">
+                                                        <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                        </form>
+                                                    
                                                         </div>
                                                     </div>
                                                 </div>
@@ -347,8 +406,16 @@
                                                     </div>
                                                     <p><?php echo $item['mo_ta']?>.</p>
                                                     <div class="product-list-action">
-                                                        <a title="Wishlist" href="#"><i class="la la-heart-o"></i></a>
-                                                        <a title="Add To Cart" href="#"><i class="la la-shopping-cart"></i></a>
+                                                    <form action="index.php?act=addcart" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                                                        <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
+                                                        <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
+                                                        <input type="hidden" name="gia_san_pham" value="<?php echo $item['gia_san_pham']; ?>">
+                                                        <div class="thongtin mb-4">
+                                                            <input class="btn btn-outline-dark" type="submit" name="addtocart" value="THÊM VÀO GIỎ">
+                                                        </div>
+                                                    </form>
+                                                    
                                                     </div>
                                                 </div>
                                             </div>

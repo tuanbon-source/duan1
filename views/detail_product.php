@@ -105,7 +105,17 @@
                                 </div>
                             </div>
                             <div class="pro-details-buy-now btn-hover btn-hover-radious">
-                                <a href="#">Thêm vào giỏ hàng</a>
+                                
+                                <form action="index.php?act=addcart" method="post">
+                                <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+        <input type="hidden" name="ten_san_pham" value="<?php echo $ten_san_pham; ?>">
+        <input type="hidden" name="anh_san_pham" value="<?php echo $anh_san_pham; ?>">
+        <input type="hidden" name="gia_san_pham" value="<?php echo $gia_san_pham; ?>">
+        <button class="addCart" style="
+  border: 1px red solid;
+  background: white;"  name="addtocart">Thêm vào giỏ hàng</button>
+        </form>
+    
                             </div>
                         </div>
                     </div>

@@ -75,6 +75,11 @@
                                     <!-- Setting account dropdown start -->
                                     <div class="setting-content">
                                         <ul>
+                                        <li>
+                                                <h4>Đơn hàng</h4>
+                                                <ul>
+                                                    <li><a href="index.php?act=mydonhang">Đơn hàng của bạn</a></li>
+                                                </ul>
                                             <li>
                                                 <h4>Chọn loại tiền tệ</h4>
                                                 <ul>
@@ -110,11 +115,15 @@
                                     </div>
                                 </div>
                                 <div class="cart-wrap cart-wrap-2">
-                                    <button class="cart-active">
-                                        <span class="mini-cart-price-2">400.000VNĐ</span>
-                                        <i class="la la-shopping-cart"></i>
-                                        <span class="count-style-2">01</span>
-                                    </button>
+                                <a href="index.php?act=giohangg" >
+                                
+                                    
+                                        <i class="la la-shopping-cart" ></i>
+                                        <span class="count-style-2"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span>
+                                        
+                                
+                                </a>
+
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
                                             <h4>Giỏ hàng của bạn</h4>
@@ -172,7 +181,7 @@
                                                 <h4>Tổng tiền: <span class="shop-total">$290.00</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover default-btn text-center">
-                                                <a class="black-color" href="checkout.html">Đi tới nơi thanh toán </a>
+                                                <a class="black-color" href="index.php?act=giohangg">Đi tới nơi thanh toán </a>
                                             </div>
                                         </div>
                                     </div>

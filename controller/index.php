@@ -13,6 +13,7 @@ include "../model/connect.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
 include "../model/user.php";
+include "../model/donhang.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     $check = "";
@@ -221,6 +222,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "admin/list_admin.php";
             break;
 
+        case 'listdonhang':
+            
+            $listdonhang = loadall_giohang();
+            include "donhang/listdonhang.php";
+            break;    
            
 
         default:

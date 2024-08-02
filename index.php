@@ -174,6 +174,10 @@ switch($act){
 
     case "cart" :
         include "views/viewcart.php";
+        break;  
+
+    case "giohangg" :
+        include "views/viewcart.php";
         break;    
 
     case "thanhtoan" :
@@ -210,6 +214,11 @@ switch($act){
             include "views/home.php";   
         }
         break;
+       
+    case "mydonhang" :
+        
+        include "views/mydonhang.php";
+        break;    
     
     default:
     include "views/home.php";

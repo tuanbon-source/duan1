@@ -47,25 +47,25 @@
                             <div class="col-lg-12">
                                 <div class="billing-info mb-20">
                                     <label>Họ tên <abbr class="required" title="required">*</abbr></label>
-                                    <input type="text" name="ten_nguoi_dung" value="<?= $ten_nguoi_dung ?>" placeholder="Nhập họ tên">
+                                    <input type="text" name="ten_nguoi_dung" value="<?= $ten_nguoi_dung ?>" placeholder="Nhập họ tên" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="billing-info mb-20">
                                     <label>Địa chỉ <abbr class="required" title="required">*</abbr></label>
-                                    <input type="text" name="dia_chi" value="<?= $dia_chi ?>" placeholder="Nhập địa chỉ">
+                                    <input type="text" name="dia_chi" value="<?= $dia_chi ?>" placeholder="Nhập địa chỉ" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="billing-info mb-20">
                                     <label>Email <abbr class="required" title="required">*</abbr></label>
-                                    <input type="text" name="email" value="<?= $email ?>" placeholder="Nhập email">
+                                    <input type="text" name="email" value="<?= $email ?>" placeholder="Nhập email" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="billing-info mb-20">
                                     <label>Số điện thoại <abbr class="required" title="required">*</abbr></label>
-                                    <input type="text" name="so_dien_thoai" value="<?= $std ?>" placeholder="Nhập số điện thoại">
+                                    <input type="text" name="so_dien_thoai" value="<?= $std ?>" placeholder="Nhập số điện thoại" required>
                                 </div>
                             </div>
                         </div>
@@ -134,23 +134,11 @@
                                         <input type="radio" name="pttt" value="2">
                                         <label for="payment-method-2">Thanh toán Chuyển khoản</label>
                                         <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference.</p>
-                                        </div>
+                                        <h4 class="span1">Ghi rõ nội dung: Tên đăng nhập-Email-SĐT</h4>
+                <img src="upload/img3.jpg" alt="" style="height: 200px; width:200px;">
+                <p class="span1" style="text-align: center;">Trang web cart</p>                                        </div>
                                     </div>
-                                    <div class="pay-top sin-payment">
-                                        <input id="payment-method-3" class="input-radio" type="radio" value="3" name="pttt">
-                                        <label for="payment-method-3">Thanh toán Ví MoMo</label>
-                                        <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference.</p>
-                                        </div>
-                                    </div>
-                                    <div class="pay-top sin-payment sin-payment-3">
-                                        <input id="payment-method-4" class="input-radio" type="radio" value="4" name="pttt">
-                                        <label for="payment-method-4">Thanh toán Online <img alt="" src="assets/images/icon-img/payment.png"><a href="#">What is PayPal?</a></label>
-                                        <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference.</p>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="Place-order mt-40">

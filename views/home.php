@@ -89,6 +89,7 @@
             </div>
             
         </div>
+        <form action="index.php?act=addcart" method="post">
         <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
         <input type="hidden" name="ten_san_pham" value="<?php echo $item['ten_san_pham']; ?>">
         <input type="hidden" name="anh_san_pham" value="<?php echo $item['anh_san_pham']; ?>">
