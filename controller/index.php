@@ -224,9 +224,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
         case 'listdonhang':
             
-            $listdonhang = loadall_giohang();
+            $listdonhang = loadall_donhang();
             include "donhang/listdonhang.php";
-            break;    
+            break; 
+
+        case "dele_donhang":
+            {
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_donhang($_GET['id']);
+                }
+                // $list = loadAll_danhmuc();
+                $listdonhang = loadall_donhang();
+                include "donhang/listdonhang.php";
+                break;
+                }
+        
            
 
         default:

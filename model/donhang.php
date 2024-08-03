@@ -19,23 +19,15 @@ function tongdonhang()
 
 
 
-function giohang($iduser, $idpro, $img, $name, $price, $soluong ,$thanhtien, $id_donhang)
-{
-    $sql = "INSERT INTO gio_hang(iduser,idpro,img,name,price,soluong,thanhtien,idbill) values('$iduser','$idpro','$img','$name','$price','$soluong','$thanhtien','$id_donhang')";
-    return pdo_execute($sql);
-}
-
-function loadone_donhang($id)
-{
-    $sql = "select * from don_hang where id=" . $id;
-    $bill = pdo_query_one($sql);
-    return $bill;
-}
-function loadall_giohang()
+function loadall_donhang()
 {
     $sql = "SELECT * FROM `don_hang` order by `id` desc ";
         $listdonhang = pdo_query($sql);
         return $listdonhang;;
+}
+function delete_donhang($id) {
+    $sql = "DELETE  FROM don_hang WHERE id =" . $_GET['id'];
+    pdo_execute($sql);
 }
 
 

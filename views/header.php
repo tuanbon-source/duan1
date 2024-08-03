@@ -25,6 +25,34 @@
     <link rel="stylesheet" href="views/assets/css/plugins/magnific-popup.css">
     <link rel="stylesheet" href="views/assets/css/plugins/jquery-ui.css">
     <link rel="stylesheet" href="views/assets/css/style.css">
+    <style>
+        /* Style for the shopping cart icon */
+        .shopping-cart-icon {
+            font-size: 24px; /* Adjust the size of the icon */
+            color: #333;    /* Set the color of the icon */
+            padding: 10px; /* Add some padding around the icon */
+            position: relative; /* Relative position for further styling if needed */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        /* Hover effect for the icon */
+        .shopping-cart-icon:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Badge for the item count */
+        .shopping-cart-icon .badge {
+            position: absolute; /* Position the badge relative to the icon */
+            top: -5px; /* Adjust vertical position */
+            right: -5px; /* Adjust horizontal position */
+            background-color: red; /* Background color of the badge */
+            color: white; /* Text color of the badge */
+            border-radius: 50%; /* Make the badge round */
+            padding: 5px 8px; /* Padding inside the badge */
+            font-size: 12px; /* Font size of the badge text */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
 
 </head>
 
@@ -81,7 +109,7 @@
                                                     <li><a href="index.php?act=mydonhang">Đơn hàng của bạn</a></li>
                                                 </ul>
                                             <li>
-                                                <h4>Chọn loại tiền tệ</h4>
+                                                <h4>Loại tiền tệ</h4>
                                                 <ul>
                                                     <li><a href="#">VNĐ</a></li>
                                                 </ul>
@@ -115,14 +143,10 @@
                                     </div>
                                 </div>
                                 <div class="cart-wrap cart-wrap-2">
-                                <a href="index.php?act=giohangg" >
-                                
-                                    
-                                        <i class="la la-shopping-cart" ></i>
-                                        <span class="count-style-2"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span>
-                                        
-                                
-                                </a>
+                                <a href="index.php?act=giohangg" class="shopping-cart-icon">
+        <i class="la la-shopping-cart"></i>
+        <span class="badge"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span>
+    </a>
 
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">

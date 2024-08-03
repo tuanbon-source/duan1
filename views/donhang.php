@@ -135,7 +135,7 @@
                                         <label for="payment-method-2">Thanh toán Chuyển khoản</label>
                                         <div class="payment-box payment_method_bacs">
                                         <h4 class="span1">Ghi rõ nội dung: Tên đăng nhập-Email-SĐT</h4>
-                <img src="upload/img3.jpg" alt="" style="height: 200px; width:200px;">
+                <img src="upload/z5693905047776_bb772ddd40a9cc2ddab18db6d28bd3b0.jpg" alt="" style="height: 200px; width:200px;">
                 <p class="span1" style="text-align: center;">Trang web cart</p>                                        </div>
                                     </div>
                                     

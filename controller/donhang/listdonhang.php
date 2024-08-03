@@ -30,7 +30,7 @@
                 <td><?php echo number_format($item['tong_tien'], 0, ',', '.'); ?> <span style="color:red;">VNĐ</span></td>
                 <td><?php echo $item['ngaydathang']; ?></td>
                 <td>
-                    <a style="color:black" href="index.php?act=dele_sp&id=<?php echo $item['id']; ?>" onclick="return confirm('Bạn có chắc chắn xóa sản phẩm này không?')">Xóa</a>
+                    <a style="color:black" href="index.php?act=dele_donhang&id=<?php echo $item['id']; ?>" onclick="return confirm('Bạn có chắc chắn xóa đơn hàng này không?')">Xóa</a>
                 </td>
             </tr>
             <?php
